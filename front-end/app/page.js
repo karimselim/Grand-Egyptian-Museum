@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
+import { Suspense, useState } from "react";
+import MainScene from "./components/scenes/MainScene";
+import { Loader } from "./components/common/Loader";
 import Navbar from "./components/Navbar/Navbar";
 import Curtains from "./components/Curtains/Curtains";
-import { useState } from "react";
-("developer branch");
+import HomePage from "./pages/Home/HomePage";
 
 export default function Home() {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
@@ -15,6 +16,7 @@ export default function Home() {
         setIsMenuToggled={setIsMenuToggled}
       />
       <Curtains isMenuToggled={isMenuToggled} />
+      <HomePage />
     </>
   );
 }
